@@ -1,0 +1,67 @@
+<!--  include Header -->
+<%- include('include/_header')%>
+    <!-- /include Header -->
+    <!-- main section-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> All User</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update User</h2>
+                <span class="text-light">Use the below form to update a new account</span>
+            </div>
+            <!-- updated user form -->
+            <!-- Form Handling-->
+            <form id="update_user" method="POST">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="hidden" name="id" value="<%=user._id%>">
+                        <input type="text" name="name" id="name" value="<%=user.name%>" placeholder="Harpreet Singh">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Email</label>
+                        <input type="text" name="email" id="Email" value="<%=user.email%>" placeholder="test@test.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="text-light">Gender</label>
+                        <div class="radio inline">
+                            <input type="radio" name="gender" id="male" value="Male" <%=user.gender=='Male' ? 'checked'
+                                :''%>>
+                            <label for="male" class="radio-label">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="gender" id="female" value="Female" <%=user.gender=='Female'
+                                ? 'checked' :''%>>
+                            <label for="female" class="radio-label">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status" class="text-light">Status</label>
+                        <div class="radio inline">
+                            <input type="radio" name="status" id="Active" value="Active" <%=user.status=='Active'
+                                ? 'checked' :''%>>
+                            <label for="Active" class="radio-label">Active</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="status" id="Inactive" value="Inactive" <%=user.status=='Inactive'
+                                ? 'checked' :''%>>
+                            <label for="Inactive" class="radio-label">Inactive</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn text-dark updated" type="submit">Save</button>
+                    </div>
+                </div>
+            </form>
+            <!-- /updated user form -->
+        </div>
+    </main>
+    <!-- /main section-->
+
+    <!--  include footer -->
+    <%- include('include/_footer')%>
+        <!-- /include footer -->
